@@ -1,39 +1,25 @@
 import React from 'react';
-import { ThemeProvider } from '@mui/material/styles';
-import theme from './themes/theme';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import SaveIcon from '@mui/icons-material/Save';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import HomePage from './pages/HomePage';
+import LogPage from './pages/LogPage';
+import DashboardPage from './pages/DashboardPage';
+import EditBabyPage from './pages/EditBabyPage';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <div style={{ padding: 20 }}>
-        <Typography variant="h2" gutterBottom>
-          Welcome to the Baby Milestone Tracker
-        </Typography>
-
-        <Typography variant="body1" paragraph>
-          This is a simple app to help you track the precious milestones in your
-          baby&#39;s life.
-        </Typography>
-
-        <Button variant="contained" color="primary" startIcon={<SaveIcon />}>
-          Save a Milestone
-        </Button>
-
-        <Card variant="outlined" style={{ marginTop: 20 }}>
-          <CardContent>
-            <Typography variant="h5">Example Milestone</Typography>
-            <Typography variant="body2">
-              This is an example of a card that could display a milestone.
-            </Typography>
-          </CardContent>
-        </Card>
+    <Router>
+      <div>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/log" element={<LogPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/edit-baby" element={<EditBabyPage />} />
+          {/* Add more routes as needed */}
+        </Routes>
       </div>
-    </ThemeProvider>
+    </Router>
   );
 }
 
