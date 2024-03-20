@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: .  # No change if Dockerfile is at the root
+      dockerfile: Dockerfile  # No change if Dockerfile is at the root
+    volumes:
+      - ./client:/app  
+    ports:
+      - "3000:80"

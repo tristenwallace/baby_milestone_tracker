@@ -1,0 +1,36 @@
+{
+  "ignorePatterns": ["node_modules/", "build/", "dist/"],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended", // Basic set of rules recommended by ESLint
+    "plugin:react/recommended", // Recommended React specific linting rules
+    "plugin:react-hooks/recommended", // Enforces the Rules of Hooks
+    "plugin:jsx-a11y/recommended", // Accessibility rules on JSX elements
+    "plugin:import/errors", // Ensure proper imports
+    "plugin:import/warnings",
+    "plugin:prettier/recommended" // Integrates Prettier with ESLint
+  ],
+  "parserOptions": {
+    "requireConfigFile": false,
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "react/react-in-jsx-scope": "off"
+  },
+  "parser": "@babel/eslint-parser",
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
