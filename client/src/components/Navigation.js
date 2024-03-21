@@ -63,7 +63,7 @@ function Navigation() {
           </Typography>
           {!isMobile && (
             <div>
-              <Button color="inherit" component={RouterLink} to="/">
+              <Button color="inherit" component={RouterLink} to="/Home">
                 Home
               </Button>
               <Button color="inherit" component={RouterLink} to="/log">
