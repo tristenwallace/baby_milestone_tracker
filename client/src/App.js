@@ -12,7 +12,7 @@ function App() {
       <div>
         <Navigation />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/log" element={<LogPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/edit-baby" element={<EditBabyPage />} />
